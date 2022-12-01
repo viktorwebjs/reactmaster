@@ -1,8 +1,8 @@
-import Card from './Card';
+import Card from '../UI/Card';
 import CostDate from './CostDate';
 import './CostItem.scss';
 
-export default function CostItem(props) {
+const CostItem = (props) => {
   return (
     <>
       <Card className='cost_item'>
@@ -14,4 +14,5 @@ export default function CostItem(props) {
       </Card>
     </>
   );
-}
+};
+export default CostItem;
