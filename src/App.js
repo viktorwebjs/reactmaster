@@ -4,7 +4,7 @@ const App = () => {
   const costs = [
     {
       date: new Date(2021, 2, 12),
-      description: 'Холодильник',
+      description: 'Refrigerator',
       amount: 999.99,
     },
     {
