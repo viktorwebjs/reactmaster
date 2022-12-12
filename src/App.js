@@ -1,4 +1,5 @@
 import Costs from './components/Costs/Costs';
+import TestProps from './components/TestProps/TestProps';
 
 const App = () => {
   const costs = [
@@ -20,6 +21,7 @@ const App = () => {
   ];
   return (
     <div>
+      <TestProps name='Test 1' />
       <Costs costs={costs} />
     </div>
   );
