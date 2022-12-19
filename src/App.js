@@ -1,25 +1,14 @@
 import Costs from './components/Costs/Costs';
+import { costs } from '../src/shared/data';
+import NewCost from './components/NewCost/NewCost';
 
 const App = () => {
-  const costs = [
-    {
-      date: new Date(2021, 2, 12),
-      description: 'Refrigerator',
-      amount: 999.99,
-    },
-    {
-      date: new Date(2021, 8, 12),
-      description: 'Smartphone',
-      amount: 599.99,
-    },
-    {
-      date: new Date(2021, 4, 12),
-      description: 'TV Set',
-      amount: 99.99,
-    },
-  ];
+  const addCostHandler = (cost) => {
+    console.log(cost);
+  };
   return (
     <div>
+      <NewCost onAddCost={addCostHandler} />
       <Costs costs={costs} />
     </div>
   );

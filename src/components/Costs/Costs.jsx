@@ -1,21 +1,31 @@
 import CostItem from './CostItem';
 import './Costs.scss';
 import Card from '../UI/Card';
+import CostsFilter from '../CostsFilter/CostsFilter';
+import { useState } from 'react';
 
 const Costs = (props) => {
+  const [selectYear, setSelectYear] = useState('2021');
+
+  let db = props.costs;
+  const changYear = (e) => {
+    setSelectYear(e);
+  };
+
   return (
-    <Card className='costs'>
-      <CostItem
-        date={props.costs[0].date}
-        description={props.costs[0].description}
-        amount={props.costs[0].amount}
-      />
-      <CostItem
-        date={props.costs[1].date}
-        description={props.costs[1].description}
-        amount={props.costs[1].amount}
-      />
-    </Card>
+    <>
+
+      <Card className='costs'> <CostsFilter year={selectYear} onChangeYear={changYear} />
+        {db.map((item, index) => (
+          <CostItem
+            key={index}
+            date={item.date}
+            description={item.description}
+            amount={item.amount}
+          />
+        ))}
+      </Card>
+    </>
   );
 };
 export default Costs;
