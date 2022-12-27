@@ -8,14 +8,15 @@ const Costs = (props) => {
   const [selectYear, setSelectYear] = useState('2021');
 
   let db = props.costs;
-  const changYear = (e) => {
+  const changeYear = (e) => {
     setSelectYear(e);
   };
 
   return (
     <>
 
-      <Card className='costs'> <CostsFilter year={selectYear} onChangeYear={changYear} />
+      <Card className='costs'>
+        <CostsFilter year={selectYear} onChangeYear={changeYear} />
         {db.map((item, index) => (
           <CostItem
             key={index}
